@@ -20,5 +20,20 @@ Exercise 1 - Saying Hello
         Write a version of the program that displays the greeting in a GUI window.
 */
 
+import java.util.Scanner;
+
 public class App {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        //input
+        System.out.println("What is your name? ");
+        String name = in.nextLine();
+
+        //concatenation
+        String outputString = "Hello, " + name + ", nice to meet you!";
+
+        //output
+        System.out.println(outputString);
+    }
 }
