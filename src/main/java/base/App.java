@@ -1,4 +1,7 @@
 package base;
+
+import java.util.Scanner;
+
 /*
 Exercise 1 - Saying Hello
 
@@ -19,21 +22,25 @@ Exercise 1 - Saying Hello
         Write a version of the program that displays different greetings for different people.
         Write a version of the program that displays the greeting in a GUI window.
 */
-
-import java.util.Scanner;
-
 public class App {
+    static Scanner in = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        App myApp = new App();
+        String name = myApp.readName();
+        String outputString = myApp.generateOutputString(name);
+        myApp.printOutput(outputString);
+    }
 
-        //input
-        System.out.println("What is your name? ");
-        String name = in.nextLine();
-
-        //concatenation
-        String outputString = "Hello, " + name + ", nice to meet you!";
-
-        //output
+    public void printOutput(String outputString) {
         System.out.println(outputString);
+    }
+
+    public String readName() {
+        System.out.println("What is your name? ");
+        return in.nextLine();
+    }
+    public String generateOutputString(String name) {
+        return "Hello, " + name + ", nice to meet you!";
     }
 }
